@@ -34,7 +34,7 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.BlocksListBox = new System.Windows.Forms.ListBox();
             this.ListBoxContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +46,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.TreeviewContextStrip.SuspendLayout();
             this.ListBoxContextStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -85,22 +86,22 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.ContextMenuStrip = this.TreeviewContextStrip;
-            this.treeView1.Location = new System.Drawing.Point(307, 41);
+            this.treeView1.Location = new System.Drawing.Point(307, 28);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(357, 421);
+            this.treeView1.Size = new System.Drawing.Size(357, 434);
             this.treeView1.TabIndex = 3;
             // 
-            // listBox1
+            // BlocksListBox
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.BlocksListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.ContextMenuStrip = this.ListBoxContextStrip;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 41);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(288, 420);
-            this.listBox1.TabIndex = 4;
+            this.BlocksListBox.ContextMenuStrip = this.ListBoxContextStrip;
+            this.BlocksListBox.FormattingEnabled = true;
+            this.BlocksListBox.Location = new System.Drawing.Point(13, 28);
+            this.BlocksListBox.Name = "BlocksListBox";
+            this.BlocksListBox.Size = new System.Drawing.Size(288, 433);
+            this.BlocksListBox.TabIndex = 4;
             // 
             // ListBoxContextStrip
             // 
@@ -126,8 +127,9 @@
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.removeToolStripMenuItem1.Text = "Remove";
+            this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
             // 
             // menuStrip1
             // 
@@ -160,8 +162,9 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -178,8 +181,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Nant build files | *.build";
+            this.openFileDialog1.Title = "Open build file";
             // 
             // Form1
             // 
@@ -187,7 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 459);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.BlocksListBox);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -209,7 +218,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox BlocksListBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -221,6 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
 
     }
 }

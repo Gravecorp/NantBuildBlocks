@@ -10,5 +10,6 @@ namespace NantBuildBlocks
     {
         public static string DEFAULTSAVEPATH = Path.Combine(Utility.AssemblyDirectory, "StoredBlocks");
         public static string SAVEDBLOCKSSEARCHPATTERN = "*.block";
+        public static string DEFAULTEXTENSION = ".block";
     }
 }
