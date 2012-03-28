@@ -11,12 +11,19 @@ namespace NantBuildBlocks
 
         public BasicElement()
         {
-
+            InherentType = this.GetType().ToString();
         }
 
         public BasicElement(string elementName)
         {
             ElementName = elementName;
+            InherentType = this.GetType().ToString();
+        }
+
+        public string InherentType
+        {
+            get;
+            set;
         }
 
         public string ElementName

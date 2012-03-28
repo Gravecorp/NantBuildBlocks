@@ -111,14 +111,16 @@ namespace NantBuildBlocks
 
         private TreeNode LoadNode(BasicElement element, TreeNode parent)
         {
-            TreeNode node = new TreeNode(element.ElementName);
+            string elementName = (string)Type.GetType(element.InherentType).InvokeMember("ElementName", BindingFlags.GetProperty, null, element, null);
+            TreeNode node = new TreeNode(elementName);
 
             if (element.Properties.Count > 0)
             {
                 foreach (BasicProperty property in element.Properties)
                 {
+                    string text = (string)Type.GetType(property.InherentType).InvokeMember("ToString", BindingFlags.InvokeMethod, null, property, null);
                     TreeNode propertyNode = new TreeNode();
-                    propertyNode.Text = property.ToString();
+                    propertyNode.Text = text;
                     node.Nodes.Add(propertyNode);
                 }
             }

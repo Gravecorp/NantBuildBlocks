@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="BasicElement.cs" />
     <Compile Include="BasicProperty.cs" />
+    <Compile Include="CDataElement.cs" />
+    <Compile Include="CDataValue.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

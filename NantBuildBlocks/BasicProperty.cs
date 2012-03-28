@@ -8,7 +8,7 @@ namespace NantBuildBlocks
     {
         public BasicProperty()
         {
-
+            InherentType = this.GetType().ToString();
         }
 
         public BasicProperty(string name, string value)
@@ -24,6 +24,12 @@ namespace NantBuildBlocks
         }
 
         public string Value
+        {
+            get;
+            set;
+        }
+
+        public string InherentType
         {
             get;
             set;

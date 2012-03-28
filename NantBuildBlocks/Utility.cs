@@ -107,9 +107,8 @@ namespace NantBuildBlocks
         {
             if (node.NodeType == XmlNodeType.CDATA)
             {
-                BasicElement cdata = new BasicElement("CDATA");
-                BasicProperty prop = new BasicProperty();
-                prop.Name = "";
+                CDataElement  cdata = new CDataElement();
+                CDataValue prop = new CDataValue();
                 prop.Value = node.InnerText;
                 cdata.Properties.Add(prop);
                 return (cdata);
