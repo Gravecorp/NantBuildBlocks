@@ -13,6 +13,7 @@ namespace NantBuildBlocks
 {
     public partial class Form1 : Form
     {
+        BlockForm blockForm;
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace NantBuildBlocks
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadBlocks();
+            blockForm = new BlockForm();
         }
 
         private void LoadBlocks()
@@ -133,6 +135,18 @@ namespace NantBuildBlocks
                 }
             }
             return (node);
+        }
+
+        private void newToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            blockForm.Element = null;
+            DialogResult result = blockForm.ShowDialog();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blockForm.Element = (BasicElement)BlocksListBox.SelectedItem;
+            blockForm.ShowDialog();
         }
     }
 }
