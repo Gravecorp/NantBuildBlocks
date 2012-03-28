@@ -4,8 +4,13 @@ using System.Text;
 
 namespace NantBuildBlocks
 {
-    class BasicProperty
+    public class BasicProperty
     {
+        public BasicProperty()
+        {
+
+        }
+
         public BasicProperty(string name, string value)
         {
             Name = name;

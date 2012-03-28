@@ -4,10 +4,15 @@ using System.Text;
 
 namespace NantBuildBlocks
 {
-    class BasicElement
+    public class BasicElement
     {
         private List<BasicProperty> properties;
         private List<BasicElement> childElements;
+
+        public BasicElement()
+        {
+
+        }
 
         public BasicElement(string elementName)
         {
