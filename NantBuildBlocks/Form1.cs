@@ -129,10 +129,9 @@ namespace NantBuildBlocks
             {
                 foreach (BasicElement child in element.ChildElements)
                 {
-                    LoadNode(child, node);
+                    node.Nodes.Add(LoadNode(child, node));
                 }
             }
-            parent.Nodes.Add(node);
             return (node);
         }
     }
